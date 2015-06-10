@@ -29,7 +29,7 @@ namespace :signonotron do
       else
         "/usr/bin/env " + env_to_clear.map { |e| "-u #{e}" }.join(" ")
       end
-      env_stuff += " RAILS_ENV=test"
+      env_stuff += " RAILS_ENV=test PATH=#{ENV.fetch('ORIGINAL_PATH')}"
 
       puts "Running bundler"
       Bundler.with_original_env do
