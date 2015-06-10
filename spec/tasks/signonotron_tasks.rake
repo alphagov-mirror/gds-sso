@@ -32,7 +32,7 @@ namespace :signonotron do
       env_stuff += " RAILS_ENV=test"
 
       puts "Running bundler"
-      Bundler.with_clean_env do
+      Bundler.with_original_env do
         puts "#{env_stuff} bundle install --path=#{gem_root + 'tmp' + "#{@app_to_launch}_bundle"}"
         puts `#{env_stuff} env`
         puts `#{env_stuff} bundle install --path=#{gem_root + 'tmp' + "#{@app_to_launch}_bundle"}`
