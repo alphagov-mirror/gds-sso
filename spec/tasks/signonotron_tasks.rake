@@ -21,7 +21,7 @@ namespace :signonotron do
     end
 
     Dir.chdir gem_root + 'tmp' + @app_to_launch do
-      env_to_clear = %w(BUNDLE_GEMFILE BUNDLE_BIN_PATH RUBYOPT GEM_HOME GEM_PATH RBENV_VERSION)
+      env_to_clear = %w(BUNDLE_GEMFILE BUNDLE_BIN_PATH RUBYOPT GEM_HOME GEM_PATH RBENV_VERSION RBENV_DIR)
 
       env_stuff = case `uname`.strip
       when "Darwin"
